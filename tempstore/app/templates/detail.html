@@ -1,0 +1,31 @@
+<div>
+    <a href="#/templates">Go back</a>
+    <br><br>
+    <div class="col-md-4">
+        <img src="img/{{template.primeImage}}" style="width: 350px;height: 350px;">
+        <br><br>
+        <div class="col-md-4" ng-repeat="detailImage in template.detailImages">
+            <img src="img/{{detailImage.name}}" style="width: 110px;height: 110px;" ng-click="setPrimeImage(detailImage.name)">
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3>{{template.name}}</h3>
+        {{template.description}}
+        <h4>{{template.price}}$</h4>
+
+        <form action="https://www.sandbox.paypal.com/cgi-bin/websrc" method="POST">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="jackreacher1994@gmail.com">
+            <input type="hidden" name="item_name" value="{{template.name}}">
+            <input type="hidden" name="item_number" value="{{template.id}}">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="amount" value="{{template.price}}">
+            <input type="hidden" name="bo_shipping" value="1">
+            <input type="hidden" name="rm" value="2">
+            <input type="hidden" name="return" value="http://localhost">
+            <input type="hidden" name="cancel_return" value="http://localhost">
+
+            <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" name="submit" alt="BUY NOW">
+        </form>
+    </div>
+</div>

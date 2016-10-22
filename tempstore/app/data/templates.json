@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Blue",
+    "description": "u34ueo3i4t84hgurgoi4g4g",
+    "price": 19.99,
+    "primeImage": "blue.jpg",
+    "detailImages": [
+      {
+        "name": "blue.jpg"
+      },
+      {
+        "name": "white.jpg"
+      },
+      {
+        "name": "black.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "White",
+    "description": "54665h5h5h4h56h5",
+    "price": 9.99,
+    "primeImage": "white.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Black",
+    "description": "5y65htgthegw4t",
+    "price": 11.99,
+    "primeImage": "black.jpg"
+  }
+]
