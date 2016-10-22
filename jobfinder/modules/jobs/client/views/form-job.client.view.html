@@ -1,0 +1,59 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.job._id ? 'Edit Job' : 'New Job'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.jobForm" class="form-horizontal" ng-submit="vm.save(vm.form.jobForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.job.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.jobForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="company">Company</label>
+          <input name="company" type="text" ng-model="vm.job.company" id="company" class="form-control" placeholder="Company" required>
+          <div ng-messages="vm.form.jobForm.company.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Company is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="state">State</label>
+          <input name="state" type="text" ng-model="vm.job.state" id="state" class="form-control" placeholder="State" required>
+          <div ng-messages="vm.form.jobForm.state.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">State is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description</label>
+          <textarea name="description" ng-model="vm.job.description" id="description" class="form-control" placeholder="Description" required></textarea>
+          <div ng-messages="vm.form.jobForm.description.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Description is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="requirements">Requirements</label>
+          <textarea name="requirements" ng-model="vm.job.requirements" id="requirements" class="form-control" placeholder="Requirements" required></textarea>
+          <div ng-messages="vm.form.jobForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requirement is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contact_email">Contact email</label>
+          <input name="contact_email" type="email" ng-model="vm.job.contact_email" id="contact_email" class="form-control" placeholder="Contact email" required>
+          <div ng-messages="vm.form.jobForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Contact email is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.job._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

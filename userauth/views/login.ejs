@@ -1,0 +1,21 @@
+<div class="row" ng-app="LoginModule" ng-controller="LoginController">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <form ng-submit="login()">
+      <div class="row column log-in-form">
+        <h4 class="text-center">Log in with you email account</h4>
+        <label>Email
+          <input type="text" placeholder="somebody@example.com" ng-model="email" required>
+        </label>
+        <label>Password
+          <input type="password" placeholder="Password" ng-model="password" required ng-maxlength="20">
+        </label>
+        <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
+        <p><input type="submit" class="button expanded" value="Log In"></p>
+        <p class="text-center"><a href="#">Forgot your password?</a></p>
+        <p class="text-center"><a href="/signup">Sign up?</a></p>
+      </div>
+    </form>
+
+  </div>
+</div>

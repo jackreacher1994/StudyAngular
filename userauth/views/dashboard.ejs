@@ -1,0 +1,15 @@
+<div class="top-bar" ng-app="DashboardModule" ng-controller="DashboardController" ng-init="getUser()">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Dashboard</li>
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li>Hi, {{user.name}}</li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</div>

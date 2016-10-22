@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <h1 data-ng-bind="vm.car.name"></h1>
+      <ul>
+        <li>Make: {{vm.car.make}}</li>
+        <li>Model: {{vm.car.model}}</li>
+        <li>Price: {{vm.car.price}} $</li>
+        <li>Year: {{vm.car.year}}</li>
+      </ul>
+      {{vm.car.description}}
+  </div>
+  <div class="pull-right"
+       data-ng-show="vm.car.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       data-ui-sref="cars.edit({ carId: vm.car._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span data-ng-bind="vm.car.created | date:'mediumDate'"></span>
+      by
+      <span data-ng-if="vm.car.user"
+            data-ng-bind="vm.car.user.displayName"></span>
+      <span data-ng-if="!vm.car.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" data-ng-bind="vm.car.content"></p>
+</section>

@@ -1,0 +1,44 @@
+<div class="row" ng-app="SignupModule" ng-controller="SignupController">
+  <div class="large-6 columns">
+    <div class="signup-panel">
+      <p class="welcome"> Welcome to this awesome app!</p>
+      <form ng-submit="signup()">
+        <div class="row collapse">
+          <div class="small-2  columns">
+            <span class="prefix"><i class="fi-torso-female"></i></span>
+          </div>
+          <div class="small-10  columns">
+            <input type="text" placeholder="Name" ng-model="name" required ng-maxlength="40">
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10  columns">
+            <input type="email" placeholder="Email" ng-model="email" required>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns ">
+            <span class="prefix"><i class="fi-lock"></i></span>
+          </div>
+          <div class="small-10 columns ">
+            <input type="password" placeholder="Password" ng-model="password" required ng-maxlength="20">
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns ">
+            <span class="prefix"><i class="fi-lock"></i></span>
+          </div>
+          <div class="small-10 columns ">
+            <input type="password" placeholder="Password confirmation" ng-model="password2" required ng-maxlength="20">
+          </div>
+        </div>
+
+        <input type="submit" class="button" value="Sign Up">
+      </form>
+      <p>Already have an account? <a href="/login">Login here &raquo</a></p>
+    </div>
+  </div>
+</div>

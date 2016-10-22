@@ -1,0 +1,134 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.car._id ? 'Edit Car' : 'New Car'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.carForm" class="form-horizontal" ng-submit="vm.save(vm.form.carForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.car.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.carForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Car name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Type</label>
+          <div class="controls">
+            <input name="type" type="radio" ng-model="vm.car.type" value="used" checked> Used
+            <input name="type" type="radio" ng-model="vm.car.type" value="new"> New
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="make">Make</label>
+          <div class="controls">
+            <select class="form-control" name="make" id="make" ng-model="vm.car.make">
+              <option value="0">Select make</option>
+              <option value="nissan">Nissan</option>
+              <option value="lexus">Lexus</option>
+              <option value="honda">Honda</option>
+              <option value="toyota">Toyota</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="state">State</label>
+          <div class="controls">
+            <select class="form-control" name="state" id="state" ng-model="vm.car.state">
+              <option value="0">Select state</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="model">Model</label>
+          <div class="controls">
+            <select class="form-control" name="model" id="model" ng-model="vm.car.model">
+              <option value="0">Select model</option>
+              <option value="avalon">Avalon</option>
+              <option value="camry">Camry</option>
+              <option value="pryus">Pryus</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description</label>
+          <textarea rows="5" name="description" ng-model="vm.car.description" id="description" class="form-control" placeholder="Description" required></textarea>
+          <div ng-messages="vm.form.carForm.description.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Car description is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="year">Year</label>
+          <input name="year" type="text" ng-model="vm.car.year" id="year" class="form-control" placeholder="Year" required>
+          <div ng-messages="vm.form.carForm.year.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Car year is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="price">Price</label>
+          <input name="price" type="text" ng-model="vm.car.price" id="price" class="form-control" placeholder="Price" required>
+          <div ng-messages="vm.form.carForm.price.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Car price is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.car._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
